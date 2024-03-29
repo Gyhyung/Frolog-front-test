@@ -2,7 +2,7 @@ import React from 'react';
 import BookReview from './BookReview';
 import { reviews } from '../../../data/dummyData/homeDummy';
 
-const BookReviewList = () => {
+function BookReviewList() {
   return (
     <div>
       {reviews.map((reviewData) => (
@@ -10,6 +10,6 @@ const BookReviewList = () => {
       ))}
     </div>
   );
-};
+}
 
 export default BookReviewList;

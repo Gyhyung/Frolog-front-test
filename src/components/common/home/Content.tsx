@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import star from '../../../assets/home/star.svg';
 import halfstar from '../../../assets/home/halfstar.svg';
 import nostar from '../../../assets/home/nostar.svg';
-import proConTag from '../../../assets/home/pro_con_tag.svg';
 import { BookReviewData } from '../../../data/dummyData/homeDummy';
 
 interface ContentProps {
@@ -49,8 +48,11 @@ function Content({ reviewData }: ContentProps) {
           <RatingNumber>{reviewData.rating}</RatingNumber>
         </RatingContainer>
         <TagsContainer>
-          <TagIcon src={proConTag} alt='Tag' />
+          {/* <TagIcon src={proConTag} alt='Tag' /> */}
           {/* TODO: 장점과 단점 태그 대체. 현재는 임시 이미지로 대체 */}
+          <Tag>재밌어요</Tag>
+          <Tag>재밌어요재밌어요재밌어요</Tag>
+          <Tag>재밌어요</Tag>
         </TagsContainer>
       </ContentRight>
     </Container>
@@ -58,6 +60,14 @@ function Content({ reviewData }: ContentProps) {
 }
 
 export default Content;
+
+const Tag = styled.div`
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 8px;
+  color: white;
+  background-color: ${({ theme }) => theme.colors.key_color};
+`;
 
 const Container = styled.div`
   display: flex;
@@ -87,7 +97,7 @@ const ReviewSection = styled.div`
 
 const OneLiner = styled.p`
   color: #000;
-  font-size: 14px;
+  font-size: ${({ theme }) => theme.fontSize.md};
   font-weight: 500;
   width: 224px;
   margin-bottom: 12px;
@@ -95,17 +105,18 @@ const OneLiner = styled.p`
 
 const Review = styled.p<{ isExpanded: boolean }>`
   color: #000;
-  font-size: 10px;
+  font-size: ${({ theme }) => theme.fontSize.sm};
   overflow: hidden;
   width: 100%;
   height: ${({ isExpanded }) => (isExpanded ? 'auto' : '45px')};
   margin-bottom: 6px;
   padding-right: 26px;
+  line-height: 160%;
 `;
 
 const ToggleButton = styled.button`
   color: #b1b1b1;
-  font-size: 8px;
+  font-size: ${({ theme }) => theme.fontSize.xs};
   font-style: normal;
   font-weight: 400;
   align-self: flex-end;
@@ -115,7 +126,7 @@ const ToggleButton = styled.button`
 
 const BookInfo = styled.p`
   color: #818181;
-  font-size: 10px;
+  font-size: ${({ theme }) => theme.fontSize.sm};
   font-style: normal;
   font-weight: 400;
 `;
@@ -134,7 +145,7 @@ const StarIcon = styled.img`
 const RatingNumber = styled.span`
   color: #000;
   text-align: right;
-  font-size: 10px;
+  font-size: ${({ theme }) => theme.fontSize.sm};
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -145,8 +156,5 @@ const RatingNumber = styled.span`
 const TagsContainer = styled.div`
   display: flex;
   margin-top: 12px;
-`;
-
-const TagIcon = styled.img`
-  margin-right: 4px;
+  gap: 6px;
 `;
