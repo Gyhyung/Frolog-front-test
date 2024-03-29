@@ -1,6 +1,6 @@
 import React from 'react';
 import BookReview from './BookReview';
-import { reviews } from '../../../data/dummyData/homeDummy';
+import { reviews } from '../../data/dummyData/homeDummy';
 
 function BookReviewList() {
   return (

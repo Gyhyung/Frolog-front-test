@@ -1,10 +1,10 @@
 import React, { useState, useCallback } from 'react';
 import styled from 'styled-components';
-import likeDefault from '../../../assets/bottomSheet/LikeDefault.svg';
-import likeClicked from '../../../assets/bottomSheet/LikeClicked.svg';
-import commentIcon from '../../../assets/home/comment.svg';
-import shareIcon from '../../../assets/home/share.svg';
-import CommentBottomSheet from '../../../pages/CommentBottomSheet';
+import likeDefault from '../../assets/bottomSheet/LikeDefault.svg';
+import likeClicked from '../../assets/bottomSheet/LikeClicked.svg';
+import commentIcon from '../../assets/home/comment.svg';
+import shareIcon from '../../assets/home/share.svg';
+import CommentBottomSheet from '../../pages/CommentBottomSheet';
 
 interface BottomBarProps {
   commentsCount: number;
@@ -15,15 +15,22 @@ function BottomBar({ commentsCount }: BottomBarProps) {
   const [likesCount, setLikesCount] = useState(0); // 초기 좋아요 수
   const [commentOpen, setCommentOpen] = useState(false);
 
+  /* ----- 댓글 바텀시트 등장 시 스크롤 방지 ----- */
+  if (commentOpen) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = 'auto';
+  }
+
   const toggleLike = useCallback(() => {
     setLike(!like);
     setLikesCount(like ? likesCount - 1 : likesCount + 1);
   }, [like, likesCount]);
 
   /* ----- 피드 공유 함수 ----- */
-  const handleShare = useCallback(async () => {
+  const handleShare = async () => {
     try {
-      await navigator.share({
+      await window.navigator.share({
         title: 'Book Title', // 실제 값으로 대체 필요
         text: 'One-liner review',
         url: '',
@@ -31,7 +38,7 @@ function BottomBar({ commentsCount }: BottomBarProps) {
     } catch (err) {
       alert('Sharing is not supported.');
     }
-  }, []);
+  };
 
   return (
     <BarContainer>
@@ -64,6 +71,7 @@ const BarContainer = styled.div`
   align-items: center;
   background-color: ${({ theme }) => theme.colors.bg_white};
   position: relative;
+  z-index: 10;
 `;
 
 const LikeButton = styled.button`

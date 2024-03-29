@@ -1,9 +1,9 @@
 import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
-import star from '../../../assets/home/star.svg';
-import halfstar from '../../../assets/home/halfstar.svg';
-import nostar from '../../../assets/home/nostar.svg';
-import { BookReviewData } from '../../../data/dummyData/homeDummy';
+import star from '../../assets/home/star.svg';
+import halfstar from '../../assets/home/halfstar.svg';
+import nostar from '../../assets/home/nostar.svg';
+import { BookReviewData } from '../../data/dummyData/homeDummy';
 
 interface ContentProps {
   reviewData: BookReviewData;
