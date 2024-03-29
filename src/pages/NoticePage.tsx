@@ -10,7 +10,7 @@ function NoticePage() {
     <Container>
       <TopContainer>
         <Header>
-          <BackBtn>
+          <BackBtn onClick={() => window.history.back()}>
             <img src={arrowLeft} alt='back' />
           </BackBtn>
           <h1>알림</h1>
