@@ -1,5 +1,7 @@
 import { createGlobalStyle, keyframes } from 'styled-components';
 import '../assets/font/font.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import reset from 'styled-reset';
 
 export const GlobalStyles = createGlobalStyle`
@@ -32,6 +34,10 @@ export const GlobalStyles = createGlobalStyle`
 
     overscroll-behavior-y: none;
     overflow: auto;
+  }
+
+  .slick-list {
+    border-radius: 12px;
   }
 `;
 

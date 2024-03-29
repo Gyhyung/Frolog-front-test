@@ -8,6 +8,7 @@ import NewReviewPage from './pages/NewReviewPage';
 import WellPage from './pages/WellPage';
 import MyPage from './pages/MyPage';
 import MainLayout from './components/layout/MainLayout';
+import DefaultLayout from './components/layout/DefaultLayout';
 
 function App() {
   /* ----- vh 구하는 함수 (for mobile) ----- */
@@ -28,13 +29,17 @@ function App() {
     <>
       <GlobalStyles />
       <Routes>
+        {/* header, nav 포함 레이아웃 */}
         <Route element={<MainLayout />}>
           <Route path='/' element={<HomePage />} />
-          <Route path='/notice' element={<NoticePage />} />
           <Route path='/search' element={<SearchPage />} />
           <Route path='/newreview' element={<NewReviewPage />} />
           <Route path='/well' element={<WellPage />} />
           <Route path='/profile' element={<MyPage />} />
+        </Route>
+        {/* header, nav 미포함 레이아웃 */}
+        <Route element={<DefaultLayout />}>
+          <Route path='/notice' element={<NoticePage />} />
         </Route>
       </Routes>
     </>
