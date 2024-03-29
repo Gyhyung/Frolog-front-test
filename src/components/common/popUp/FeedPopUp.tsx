@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { fadeUp } from '../../../styles/GlobalStyles';
 import Cancel from '../../../assets/popUp/Cancel.svg';
-import { reportData } from '../../../data/dummyData/reportData';
+import { reportData } from '../../../data/reportData';
 
 type FeedPopUpProps = {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
