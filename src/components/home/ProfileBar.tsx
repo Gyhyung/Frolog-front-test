@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import menuIcon from '../../../assets/home/menu.svg';
-import { UserProfile } from '../../../data/dummyData/homeDummy';
-import FeedPopUp from '../popUp/FeedPopUp';
+import menuIcon from '../../assets/home/menu.svg';
+import { UserProfile } from '../../data/dummyData/homeDummy';
+import FeedPopUp from '../common/popUp/FeedPopUp';
 
 interface ProfileBarProps {
   user: UserProfile;
@@ -34,6 +34,7 @@ const BarContainer = styled.div`
   width: 100%;
   padding: 0 16px 16px;
   position: relative;
+  z-index: 10;
 `;
 
 const ProfileImage = styled.img`

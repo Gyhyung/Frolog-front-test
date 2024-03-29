@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import ProfileBar from './ProfileBar';
 import Content from './Content';
 import BottomBar from './BottomBar';
-import { BookReviewData } from '../../../data/dummyData/homeDummy';
+import { BookReviewData } from '../../data/dummyData/homeDummy';
 
 interface BookReviewProps {
   reviewData: BookReviewData;

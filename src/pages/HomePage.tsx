@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import BookReviewList from '../components/common/home/BookReviewList';
+import BookReviewList from '../components/home/BookReviewList';
 
 function HomePage() {
   return (

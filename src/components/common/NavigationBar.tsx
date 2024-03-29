@@ -41,7 +41,7 @@ const NavigationBarContainer = styled.nav`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 110px;
+  height: 70px;
   width: 100%;
   box-sizing: border-box;
   background-color: ${({ theme }) => theme.colors.bg_white};
