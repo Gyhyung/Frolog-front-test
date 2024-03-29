@@ -12,6 +12,7 @@ export const GlobalStyles = createGlobalStyle`
   }
   * {
     box-sizing: border-box;
+    scrollbar-width: none; /* Firefox */
   }
   button {
     background: none;
@@ -38,6 +39,12 @@ export const GlobalStyles = createGlobalStyle`
 
   .slick-list {
     border-radius: 12px;
+  }
+  
+  // 스크롤바 스타일 숨기기
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
   }
 `;
 
