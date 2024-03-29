@@ -33,6 +33,16 @@ export const GlobalStyles = createGlobalStyle`
     overscroll-behavior-y: none;
     overflow: auto;
   }
+  // 스크롤바 스타일 숨기기
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+  
+  // Firefox를 위한 스타일
+  * {
+    scrollbar-width: none; /* Firefox */
+  }
 `;
 
 export const fadeUp = keyframes`
