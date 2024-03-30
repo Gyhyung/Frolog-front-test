@@ -26,7 +26,7 @@ export const GlobalStyles = createGlobalStyle`
   body {
     margin: 0;
     width: 100vw;
-    font-family: "Pretendard";
+    font-family: "Noto Sans KR", sans-serif;
 
     display: flex;
     justify-content: center;
